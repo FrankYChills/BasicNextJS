@@ -13,7 +13,7 @@ export default function Home({ articles }) {
 }
 //getStatic Props fetchs the data at build time that means before it is sent to FrontEnd it fetches data first and then gets send to FE
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(`${server}/api/articles`);
   const articles = await res.json();
   return {
